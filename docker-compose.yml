@@ -1,14 +1,14 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  mysqldb:
+  tourplanservice-mysql:
     image: mysql
-    container_name: mysqldb
+    container_name: tourplanservice-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=tourplanservicedb,placeservicedb,userservicedb,feedbackservicedb,adminservicedb
+      - MYSQL_DATABASE=tourplanservicedb
     volumes:
-      - mysqldb-data:/var/lib/mysql
+      - tourplanservice-mysql-db:/var/lib/mysql
     networks:
       - mynetwork
 
