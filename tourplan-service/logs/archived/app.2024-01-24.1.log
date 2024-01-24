@@ -1,0 +1,79 @@
+2024-01-24 15:42:08,180 INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(12)-127.0.0.1] Application shutdown requested.
+2024-01-24 15:42:08,237 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(12)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 15:42:08,247 INFO c.z.h.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2024-01-24 15:42:08,271 INFO c.z.h.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2024-01-24 15:47:07,360 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.tourplan.TourplanServiceApplicationTests]: TourplanServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-24 15:47:07,631 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.tourplan.TourplanServiceApplication for test class com.tourplan.TourplanServiceApplicationTests
+2024-01-24 15:47:07,946 INFO o.s.b.d.r.RestartApplicationListener [main] Restart disabled due to context in which it is running
+2024-01-24 15:47:08,601 INFO c.t.TourplanServiceApplicationTests [main] Starting TourplanServiceApplicationTests using Java 21.0.1 with PID 24664 (started by thoraju in C:\Users\thoraju\git\tourbackend\tourplan-service)
+2024-01-24 15:47:08,604 INFO c.t.TourplanServiceApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-24 15:47:11,431 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-24 15:47:11,586 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 136 ms. Found 2 JPA repository interfaces.
+2024-01-24 15:47:12,185 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=880cc28c-09dc-386f-b9c3-5000c389aad2
+2024-01-24 15:47:13,913 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-24 15:47:14,095 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-24 15:47:14,186 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-01-24 15:47:14,703 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-24 15:47:14,773 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-24 15:47:15,575 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c68a63c
+2024-01-24 15:47:15,578 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-24 15:47:15,681 WARN o.h.o.deprecation [main] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-24 15:47:17,489 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-24 15:47:17,588 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 15:47:18,410 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-24 15:47:25,827 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2024-01-24 15:47:26,051 INFO c.t.TourplanServiceApplicationTests [main] Started TourplanServiceApplicationTests in 18.127 seconds (process running for 21.105)
+2024-01-24 15:47:29,073 INFO c.t.s.TourPlanServiceImpl [main] Fetching tour plan details for tourId: 1
+2024-01-24 15:47:29,262 INFO c.t.s.TourPlanServiceImpl [main] Fetching tour plan details for tourId: 1
+2024-01-24 15:47:29,263 INFO c.t.s.TourPlanServiceImpl [main] Fetching TourDatesPlaces for tourId: 1
+2024-01-24 15:47:29,267 INFO c.t.s.TourPlanServiceImpl [main] Fetching User details for userId: 1
+2024-01-24 15:47:29,279 INFO c.t.s.TourPlanServiceImpl [main] Retrieved tour plan details successfully for tourId: 1
+2024-01-24 15:47:29,553 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 15:47:29,563 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-24 15:47:29,603 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-24 16:02:39,499 INFO c.t.TourplanServiceApplication [restartedMain] Starting TourplanServiceApplication using Java 21.0.1 with PID 7248 (C:\Users\thoraju\git\tourbackend\tourplan-service\target\classes started by thoraju in C:\Users\thoraju\git\tourbackend\tourplan-service)
+2024-01-24 16:02:39,501 INFO c.t.TourplanServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-01-24 16:02:39,564 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-24 16:02:39,564 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-24 16:02:40,756 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-24 16:02:40,812 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2024-01-24 16:02:41,025 INFO o.s.c.c.s.GenericScope [restartedMain] BeanFactory id=9eee66e3-814c-3425-8314-3982f0fc127d
+2024-01-24 16:02:41,792 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8090 (http)
+2024-01-24 16:02:41,804 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2024-01-24 16:02:41,804 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-24 16:02:41,874 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-01-24 16:02:41,874 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2309 ms
+2024-01-24 16:02:42,218 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-24 16:02:42,277 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-24 16:02:42,309 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-01-24 16:02:42,521 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-24 16:02:42,555 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-01-24 16:02:42,909 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e0d34f0
+2024-01-24 16:02:42,913 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-01-24 16:02:42,965 WARN o.h.o.deprecation [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-24 16:02:43,905 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-24 16:02:43,960 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 16:02:44,254 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-24 16:02:44,400 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-01-24 16:02:46,787 INFO o.s.b.a.e.w.EndpointLinksResolver [restartedMain] Exposing 3 endpoint(s) beneath base path '/actuator'
+2024-01-24 16:02:46,880 WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-01-24 16:02:46,887 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 16:02:46,891 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2024-01-24 16:02:46,904 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2024-01-24 16:02:46,922 INFO o.s.b.a.l.ConditionEvaluationReportLogger [restartedMain] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-01-24 16:02:46,946 ERROR o.s.b.d.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
+
