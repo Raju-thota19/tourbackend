@@ -1,6 +1,29 @@
-2024-01-11 17:44:52,788 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
-2024-01-11 17:49:52,890 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
-2024-01-11 17:54:52,966 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
-2024-01-11 17:59:53,031 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
-2024-01-11 18:04:53,076 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
-2024-01-11 20:45:26,162 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h37m5s259ms795µs200ns).
+2024-01-24 14:44:45,499 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.tourplan.TourplanServiceApplicationTests]: TourplanServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-24 14:44:45,689 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.tourplan.TourplanServiceApplication for test class com.tourplan.TourplanServiceApplicationTests
+2024-01-24 14:44:45,923 INFO o.s.b.d.r.RestartApplicationListener [main] Restart disabled due to context in which it is running
+2024-01-24 14:44:46,322 INFO c.t.TourplanServiceApplicationTests [main] Starting TourplanServiceApplicationTests using Java 21.0.1 with PID 24900 (started by thoraju in C:\Users\thoraju\git\tourbackend\tourplan-service)
+2024-01-24 14:44:46,323 INFO c.t.TourplanServiceApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-24 14:44:47,843 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-24 14:44:47,911 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2024-01-24 14:44:48,204 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=880cc28c-09dc-386f-b9c3-5000c389aad2
+2024-01-24 14:44:49,040 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-24 14:44:49,126 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-24 14:44:49,187 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-01-24 14:44:49,584 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-24 14:44:49,621 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-24 14:44:50,156 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54d46c8
+2024-01-24 14:44:50,159 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-24 14:44:50,260 WARN o.h.o.deprecation [main] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-24 14:44:51,434 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-24 14:44:51,596 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 14:44:52,009 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-24 14:44:57,182 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 3 endpoint(s) beneath base path '/actuator'
+2024-01-24 14:44:57,371 INFO c.t.TourplanServiceApplicationTests [main] Started TourplanServiceApplicationTests in 11.469 seconds (process running for 13.234)
+2024-01-24 14:44:59,405 INFO c.t.s.TourPlanServiceImpl [main] Fetching tour plan details for tourId: 1
+2024-01-24 14:44:59,502 INFO c.t.s.TourPlanServiceImpl [main] Fetching tour plan details for tourId: 1
+2024-01-24 14:44:59,503 INFO c.t.s.TourPlanServiceImpl [main] Fetching TourDatesPlaces for tourId: 1
+2024-01-24 14:44:59,506 INFO c.t.s.TourPlanServiceImpl [main] Fetching User details for userId: 1
+2024-01-24 14:44:59,510 INFO c.t.s.TourPlanServiceImpl [main] Retrieved tour plan details successfully for tourId: 1
+2024-01-24 14:44:59,644 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-24 14:44:59,649 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-24 14:44:59,684 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
