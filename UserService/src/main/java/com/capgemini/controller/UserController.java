@@ -28,6 +28,11 @@ public class UserController {
     @Autowired
     private UserService userService;
     
+    @GetMapping("welcome")
+    public String welcome () {
+    	return "hi Raju";
+    }
+    
     @PostMapping("/register")
     public Integer addCustomer(@Valid @RequestBody UserDto userDTO) {
         logger.info("Registering user: {}", userDTO.getFullName());
