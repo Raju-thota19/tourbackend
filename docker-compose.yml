@@ -72,6 +72,7 @@ services:
       - "8090:8090"
     networks:
       - mynetwork
+      - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=tourplan
 
@@ -88,6 +89,7 @@ services:
       - "8070:8070"
     networks:
       - mynetwork
+      - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=place
 
@@ -104,6 +106,7 @@ services:
       - "8099:8099"
     networks:
       - mynetwork
+      - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=user
 
@@ -120,6 +123,7 @@ services:
       - "8060:8060"
     networks:
       - mynetwork
+      - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=feedback
 
@@ -136,6 +140,7 @@ services:
       - "8085:8085"
     networks:
       - mynetwork
+      - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=admin
 
@@ -149,9 +154,12 @@ services:
       - "8761:8761"
     networks:
       - mynetwork
+      - desktop_sonarnet
 
 networks:
   mynetwork:
+    driver: bridge
+  desktop_sonarnet:  
     driver: bridge
 
 volumes:
