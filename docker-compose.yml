@@ -11,7 +11,7 @@ services:
       - tourplanservice-mysql-db:/var/lib/mysql
     networks:
       - mynetwork
-
+  
   placeservice-mysql:
     image: mysql
     container_name: placeservice-mysql
@@ -22,6 +22,7 @@ services:
       - placeservice-mysql-db:/var/lib/mysql
     networks:
       - mynetwork
+   
 
   userservice-mysql:
     image: mysql
@@ -33,6 +34,7 @@ services:
       - userservice-mysql-db:/var/lib/mysql
     networks:
       - mynetwork
+    
 
   feedbackservice-mysql:
     image: mysql
@@ -44,6 +46,7 @@ services:
       - feedbackservice-mysql-db:/var/lib/mysql
     networks:
       - mynetwork
+  
 
   adminservice-mysql:
     image: mysql
@@ -55,6 +58,7 @@ services:
       - adminservice-mysql-db:/var/lib/mysql
     networks:
       - mynetwork
+   
 
   tourplanservice:
     image: shalemraj/tourplanimage
@@ -68,6 +72,9 @@ services:
       - "8090:8090"
     networks:
       - mynetwork
+    command:
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=tourplan
+
 
   placeservice:
     image: shalemraj/placeimage
@@ -81,6 +88,9 @@ services:
       - "8070:8070"
     networks:
       - mynetwork
+    command:
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=place
+
 
   userservice:
     image: shalemraj/userimage
@@ -94,6 +104,9 @@ services:
       - "8099:8099"
     networks:
       - mynetwork
+    command:
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=user
+
 
   feedbackservice:
     image: shalemraj/feedbackimage
@@ -107,6 +120,9 @@ services:
       - "8060:8060"
     networks:
       - mynetwork
+    command:
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=feedback
+
 
   adminservice:
     image: shalemraj/adminimage
@@ -120,6 +136,9 @@ services:
       - "8085:8085"
     networks:
       - mynetwork
+    command:
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=admin
+
 
   serverservice:
     image: shalemraj/serverimage
