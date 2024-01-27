@@ -71,7 +71,6 @@ services:
     ports:
       - "8090:8090"
     networks:
-      - mynetwork
       - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=tourplan
@@ -88,7 +87,6 @@ services:
     ports:
       - "8070:8070"
     networks:
-      - mynetwork
       - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=place
@@ -105,7 +103,6 @@ services:
     ports:
       - "8099:8099"
     networks:
-      - mynetwork
       - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=user
@@ -122,7 +119,6 @@ services:
     ports:
       - "8060:8060"
     networks:
-      - mynetwork
       - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=feedback
@@ -139,7 +135,6 @@ services:
     ports:
       - "8085:8085"
     networks:
-      - mynetwork
       - desktop_sonarnet
     command:
       mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=admin
@@ -153,7 +148,6 @@ services:
     ports:
       - "8761:8761"
     networks:
-      - mynetwork
       - desktop_sonarnet
 
 networks:
