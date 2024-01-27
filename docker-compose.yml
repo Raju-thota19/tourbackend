@@ -151,8 +151,6 @@ services:
       - desktop_sonarnet
 
 networks:
-  mynetwork:
-    driver: bridge
   desktop_sonarnet:  
     driver: bridge
 
