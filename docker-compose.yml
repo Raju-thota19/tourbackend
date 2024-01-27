@@ -73,7 +73,7 @@ services:
     networks:
       - desktop_sonarnet
     command:
-      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=tourplan
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=tourplan
 
 
   placeservice:
@@ -89,7 +89,7 @@ services:
     networks:
       - desktop_sonarnet
     command:
-      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=place
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=place
 
 
   userservice:
@@ -105,7 +105,7 @@ services:
     networks:
       - desktop_sonarnet
     command:
-      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=user
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=user
 
 
   feedbackservice:
@@ -121,7 +121,7 @@ services:
     networks:
       - desktop_sonarnet
     command:
-      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=feedback
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=feedback
 
 
   adminservice:
@@ -137,7 +137,7 @@ services:
     networks:
       - desktop_sonarnet
     command:
-      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 _Dsonar.projectKey=admin
+      mvn clean verify sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=admin
 
 
   serverservice:
