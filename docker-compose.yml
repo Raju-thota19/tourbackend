@@ -10,7 +10,7 @@ services:
     volumes:
       - tourplanservice-mysql-db:/var/lib/mysql
     networks:
-      - mynetwork
+      - desktop_sonarnet
   
   placeservice-mysql:
     image: mysql
@@ -21,7 +21,7 @@ services:
     volumes:
       - placeservice-mysql-db:/var/lib/mysql
     networks:
-      - mynetwork
+      - desktop_sonarnet
    
 
   userservice-mysql:
@@ -33,7 +33,7 @@ services:
     volumes:
       - userservice-mysql-db:/var/lib/mysql
     networks:
-      - mynetwork
+      - desktop_sonarnet
     
 
   feedbackservice-mysql:
@@ -45,7 +45,7 @@ services:
     volumes:
       - feedbackservice-mysql-db:/var/lib/mysql
     networks:
-      - mynetwork
+      - desktop_sonarnet
   
 
   adminservice-mysql:
@@ -57,7 +57,7 @@ services:
     volumes:
       - adminservice-mysql-db:/var/lib/mysql
     networks:
-      - mynetwork
+      - desktop_sonarnet
    
 
   tourplanservice:
