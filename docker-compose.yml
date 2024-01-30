@@ -1,162 +1,96 @@
 version: '3.8'
-
+ 
 services:
-  tourplanservice-mysql:
-    image: mysql
-    container_name: tourplanservice-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=tourplanservicedb
-    volumes:
-      - tourplanservice-mysql-db:/var/lib/mysql
+  mysql-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mysql-container
+    ports:
+      - "3306:3306"
     networks:
-      - desktop_sonarnet
-  
-  placeservice-mysql:
-    image: mysql
-    container_name: placeservice-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=placeservicedb
+      - mynetwork
     volumes:
-      - placeservice-mysql-db:/var/lib/mysql
-    networks:
-      - desktop_sonarnet
-   
-
-  userservice-mysql:
-    image: mysql
-    container_name: userservice-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=userservicedb
-    volumes:
-      - userservice-mysql-db:/var/lib/mysql
-    networks:
-      - desktop_sonarnet
-    
-
-  feedbackservice-mysql:
-    image: mysql
-    container_name: feedbackservice-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=feedbackservicedb
-    volumes:
-      - feedbackservice-mysql-db:/var/lib/mysql
-    networks:
-      - desktop_sonarnet
-  
-
-  adminservice-mysql:
-    image: mysql
-    container_name: adminservice-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=adminservicedb
-    volumes:
-      - adminservice-mysql-db:/var/lib/mysql
-    networks:
-      - desktop_sonarnet
-   
-
+      - mydata:/var/lib/mysql
+ 
   tourplanservice:
-    image: shalemraj/tourplanimage
+    image: shalemraj/tourplanimage:latest
     container_name: tourplanservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://tourplanservice-mysql:3306/tourplanservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/tourplanservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8090
     ports:
       - "8090:8090"
     networks:
-      - desktop_sonarnet
-    command:
-      mvn clean verify install sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=tourplan
-
-
+      - mynetwork
+ 
   placeservice:
-    image: shalemraj/placeimage
+    image: shalemraj/placeimage:latest
     container_name: placeservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://placeservice-mysql:3306/placeservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/placeservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8070
     ports:
       - "8070:8070"
     networks:
-      - desktop_sonarnet
-    command:
-      mvn clean verify install sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=place
-
-
+      - mynetwork
+ 
   userservice:
-    image: shalemraj/userimage
+    image: shalemraj/userimage:latest
     container_name: userservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://userservice-mysql:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8099
     ports:
       - "8099:8099"
     networks:
-      - desktop_sonarnet
-    command:
-      mvn clean verify install sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=user
-
-
+      - mynetwork
+ 
   feedbackservice:
-    image: shalemraj/feedbackimage
+    image: shalemraj/feedbackimage:latest
     container_name: feedbackservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://feedbackservice-mysql:3306/feedbackservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/feedbackservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8060
     ports:
       - "8060:8060"
     networks:
-      - desktop_sonarnet
-    command:
-      mvn clean verify install sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=feedback
-
-
+      - mynetwork
+ 
   adminservice:
-    image: shalemraj/adminimage
+    image: shalemraj/adminimage:latest
     container_name: adminservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://adminservice-mysql:3306/adminservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/adminservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8085
     ports:
       - "8085:8085"
     networks:
-      - desktop_sonarnet
-    command:
-      mvn clean verify install sonar:sonar -Dsonar.host.url=http://sonarqube:9001 -Dsonar.projectKey=admin
-
-
+      - mynetwork
+ 
   serverservice:
-    image: shalemraj/serverimage
+    image: shalemraj/serverimage:latest
     container_name: serverservice
     environment:
       - SERVER_PORT=8761
     ports:
       - "8761:8761"
     networks:
-      - desktop_sonarnet
-
+      - mynetwork
+ 
 networks:
-  desktop_sonarnet:  
+  mynetwork:
     driver: bridge
-
+ 
 volumes:
-  tourplanservice-mysql-db:
-  placeservice-mysql-db:
-  userservice-mysql-db:
-  feedbackservice-mysql-db:
-  adminservice-mysql-db:
+  mydata:
