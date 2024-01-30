@@ -13,117 +13,73 @@ services:
     volumes:
       - mydata:/var/lib/mysql
  
- tourplanservice:
-    build:
-      context: ./path/to/tourplanservice
-      dockerfile: Dockerfile
-    image: shalemraj/tourplanimage
+  tourplanservice:
+    image: snahammed/tourplanimage:latest
     container_name: tourplanservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://tourplanservice-mysql:3306/tourplanservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/tourplanservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8090
     ports:
       - "8090:8090"
     networks:
-      - desktop_sonarnet
-    command: >
-      sh -c "
-        mvn clean install verify &&
-        docker build -t shalemraj/tourplanimage ./path/to/tourplanservice &&
-        docker push shalemraj/tourplanimage
-      "
-
+      - mynetwork
+ 
   placeservice:
-    build:
-      context: ./path/to/placeservice
-      dockerfile: Dockerfile
-    image: shalemraj/placeimage
+    image: snahammed/placeimage:latest
     container_name: placeservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://placeservice-mysql:3306/placeservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/placeservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8070
     ports:
       - "8070:8070"
     networks:
-      - desktop_sonarnet
-    command: >
-      sh -c "
-        mvn clean install verify &&
-        docker build -t shalemraj/placeimage ./path/to/placeservice &&
-        docker push shalemraj/placeimage
-      "
-
+      - mynetwork
+ 
   userservice:
-    build:
-      context: ./path/to/userservice
-      dockerfile: Dockerfile
-    image: shalemraj/userimage
+    image: snahammed/userimage:latest
     container_name: userservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://userservice-mysql:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8099
     ports:
       - "8099:8099"
     networks:
-      - desktop_sonarnet
-    command: >
-      sh -c "
-        mvn clean install verify &&
-        docker build -t shalemraj/userimage ./path/to/userservice &&
-        docker push shalemraj/userimage
-      "
-
+      - mynetwork
+ 
   feedbackservice:
-    build:
-      context: ./path/to/feedbackservice
-      dockerfile: Dockerfile
-    image: shalemraj/feedbackimage
+    image: snahammed/feedbackimage:latest
     container_name: feedbackservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://feedbackservice-mysql:3306/feedbackservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/feedbackservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8060
     ports:
       - "8060:8060"
     networks:
-      - desktop_sonarnet
-    command: >
-      sh -c "
-        mvn clean install verify &&
-        docker build -t shalemraj/feedbackimage ./path/to/feedbackservice &&
-        docker push shalemraj/feedbackimage
-      "
-
+      - mynetwork
+ 
   adminservice:
-    build:
-      context: ./path/to/adminservice
-      dockerfile: Dockerfile
-    image: shalemraj/adminimage
+    image: snahammed/adminimage:latest
     container_name: adminservice
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://adminservice-mysql:3306/adminservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/adminservicedb?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8085
     ports:
       - "8085:8085"
     networks:
-      - desktop_sonarnet
-    command: >
-      sh -c "
-        mvn clean install verify &&
-        docker build -t shalemraj/adminimage ./path/to/adminservice &&
-        docker push shalemraj/adminimage
-      " 
+      - mynetwork
+ 
   serverservice:
-    image: shalemraj/serverimage:latest
+    image: snahammed/serverimage:latest
     container_name: serverservice
     environment:
       - SERVER_PORT=8761
