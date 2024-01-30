@@ -87,4 +87,5 @@ public class UserController {
         logger.info("Fetching user for client with ID: {}", userId);
         return userService.getUserForClient(userId);
     }
+
 }
