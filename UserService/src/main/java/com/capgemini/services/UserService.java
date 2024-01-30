@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.capgemini.dto.LoginDTO;
 import com.capgemini.dto.UserDto;
 import com.capgemini.entity.User;
 import com.capgemini.repository.UserRepository;
@@ -110,17 +111,23 @@ public class UserService {
 			user.setId(userDTO.getId());
 
 			userRepo.save(user);
-			System.out.println("goosd");
+			System.out.println("good");
 			return 1;
 			
 		}
-		
-
 	}
 
 	public Integer getUserForClient(Integer userId) {
 		logger.info("Fetching user for client with ID: {}", userId);
 		User user = userRepo.findById(userId).orElseThrow();
 		return user.getId();
+	}
+
+	public String loginUser(LoginDTO loginDto) {
+		User user = userRepo.getByEmail(loginDto.getEmail());
+		if(user.getPassword().equals(loginDto.getPassword())){
+			return "Login Successful";			
+		}
+		else return "Invalid Details";
 	}
 }

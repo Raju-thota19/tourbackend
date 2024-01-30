@@ -1,6 +1,7 @@
 package com.capgemini.controller;
 
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.capgemini.dto.LoginDTO;
 import com.capgemini.dto.UserDto;
 import com.capgemini.services.UserService;
 
@@ -86,6 +89,11 @@ public class UserController {
     public Integer getUserForClient(@PathVariable(name = "userId") Integer userId) {
         logger.info("Fetching user for client with ID: {}", userId);
         return userService.getUserForClient(userId);
+    }
+    
+    @PostMapping("/loginUser")
+    public String loginUser(@RequestBody LoginDTO loginDto) {
+    	return userService.loginUser (loginDto);
     }
 
 }
