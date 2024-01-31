@@ -14,7 +14,7 @@ services:
       - mydata:/var/lib/mysql
  
   tourplanservice:
-    image: snahammed/tourplanimage:latest
+    image: shalemraj/tourplanimage:latest
     container_name: tourplanservice
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/tourplanservicedb?useSSL=false&allowPublicKeyRetrieval=true
@@ -27,7 +27,7 @@ services:
       - mynetwork
  
   placeservice:
-    image: snahammed/placeimage:latest
+    image: shalemraj/placeimage:latest
     container_name: placeservice
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/placeservicedb?useSSL=false&allowPublicKeyRetrieval=true
@@ -40,7 +40,7 @@ services:
       - mynetwork
  
   userservice:
-    image: snahammed/userimage:latest
+    image: shalemraj/userimage:latest
     container_name: userservice
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true
@@ -53,7 +53,7 @@ services:
       - mynetwork
  
   feedbackservice:
-    image: snahammed/feedbackimage:latest
+    image: shalemraj/feedbackimage:latest
     container_name: feedbackservice
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/feedbackservicedb?useSSL=false&allowPublicKeyRetrieval=true
@@ -66,7 +66,7 @@ services:
       - mynetwork
  
   adminservice:
-    image: snahammed/adminimage:latest
+    image: shalemraj/adminimage:latest
     container_name: adminservice
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/adminservicedb?useSSL=false&allowPublicKeyRetrieval=true
@@ -79,7 +79,7 @@ services:
       - mynetwork
  
   serverservice:
-    image: snahammed/serverimage:latest
+    image: shalemraj/serverimage:latest
     container_name: serverservice
     environment:
       - SERVER_PORT=8761
